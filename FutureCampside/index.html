@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Future of Campside trägt — Electrisize Eco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="festival-badge" id="festivalBadge">Electrisize 2026</div>
+  
+  <!-- Chat Modal -->
+  <div class="chat-modal" id="chatModal">
+    <div class="chat-header">
+      <h3>Festival Assistent</h3>
+      <button class="close-btn" id="closeChat">×</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message assistant">
+          <p>Hallo! Ich bin dein Festival Assistent. Frag mich alles über Electrisize & Future of Campside 2026! </p>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Stelle deine Frage zum Festival..." />
+        <button class="send-btn" id="sendBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <header class="nav no-fx">
+    <a class="logo" href= "https://electrisize.de/" target="_blank" aria-label="Electrisize Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180.91" aria-hidden="true" focusable="false">
+        <path id="Electrisize" fill="currentColor" d="M241.49,0c-20.64,0-37.43,16.79-37.43,37.43v106.05c0,20.64,16.79,37.43,37.43,37.43s37.43-16.79,37.43-37.43v-20.3l-27.8,11.54v12.6c0,5.31-4.32,9.63-9.63,9.63s-9.63-4.32-9.63-9.63V33.59c0-5.31,4.32-9.63,9.63-9.63s9.63,4.32,9.63,9.63v24.14l27.8-11.54v-8.76c0-20.64-16.79-37.43-37.43-37.43Zm48.72,25.89h26.92V178.99h27.8V25.89h26.92V1.92h-81.65V25.89ZM138.11,178.99h54.72v-23.97h-26.92V87.88l23.09-9.57-.02-26.43-23.07,9.56V25.89h26.92V1.92h-54.72V178.99ZM96.86,1.92h-27.8V178.99h54.72v-23.97h-26.92V1.92ZM0,178.99H54.72v-23.97H27.8V87.88l23.09-9.57-.02-26.43-23.07,9.56V25.89h26.92V1.92H0V178.99Zm605.59,0h26.84V1.92h-26.84V178.99Zm108.23-98.73l-14.93,6.16L724.26,1.92h-76.57V25.88h40.36l-22.31,74.35,13.98-5.81-25.34,84.56h76.57v-23.97h-40.36l23.24-74.76Zm86.18-54.37V1.92h-54.72V178.99h54.72v-23.97h-26.92V87.88l23.09-9.57-.02-26.43-23.07,9.56V25.89h26.92ZM476.4,178.99h26.84V1.92h-26.84V178.99Zm-15.14-82.61V39.35c0-20.64-16.79-37.43-37.43-37.43h-37.43V178.99h27.8v-38.18l10.66-4.4,11.41,42.58h26.8l-14.59-54.47c7.97-7.01,12.78-17.24,12.78-28.14Zm-27.8,3.21c0,3.9-2.35,7.41-5.96,8.9l-13.3,5.49V25.88h9.63c5.32,0,9.63,4.31,9.63,9.63V99.59ZM554.62,0c-20.64,0-37.43,16.79-37.43,37.43v27.06c0,14.49,8.48,27.8,21.61,33.92l19.89,9.27c3.38,1.57,5.56,5,5.56,8.73v30.9c0,5.31-4.32,9.63-9.63,9.63s-9.63-4.32-9.63-9.63v-24.14l-27.8,11.54v8.76c0,20.64,16.79,37.43,37.43,37.43s37.43-16.79,37.43-37.43v-27.06c0-14.49-8.48-27.8-21.61-33.92l-19.89-9.27c-3.38-1.57-5.56-5-5.56-8.72v-30.9c0-5.31,4.32-9.63,9.63-9.63s9.63,4.32,9.63,9.63v24.14l27.8-11.54v-8.76C592.05,16.79,575.26,0,554.62,0Z"></path>
+      </svg>
+    </a>
+    <a href="#" class="nav-title">
+      <img src="../Logo_Trash Island_Electrisize_weiss.png" alt="FoC" class="nav-title-logo" />
+      <span>FoC</span>
+    </a>
+    <nav class="no-fx">
+      <a href="#hero">Innovationen</a>
+      <a href="#eco">Trash Island</a>
+      <a href="#site-map">Lageplan</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="fisheye-title">
+        <h1>Future of </h1>
+        <h2>Campside </h2>
+      </div>
+      <p class="hero-badge">Ein Projekt des Electrisize Festivals</p>
+      <p class="lead">Innovationen, die Campen auf dem Electrisize Festival smarter & <span class="fisheye-word" data-color-far="#fffffff" data-color-near="#30fd47">grüner</span> machen.</p>
+      <p><a class="btn" href="#features">Mehr erfahren </a></p>
+    </section>
+
+    <section id="features" class="cards">
+      <article class="card">
+        <h3>Solare Ladehubs</h3>
+        <p>Kostengünstige, gemeinschaftliche Ladestationen betrieben mit modularen Solarpanelen.</p>
+      </article>
+      <article class="card">
+        <h3>Wasserrecycling</h3>
+        <p>Mobile Systeme zur Aufbereitung von Dusch- und Spülwasser für wiederverwendbaren Gebrauch.</p>
+      </article>
+      <article class="card">
+        <h3>Smart-Sharing</h3>
+        <p>App-basierte Plattform zum Teilen von Zeltequipment, Werkzeugen und Lichtquellen.</p>
+      </article>
+      <article class="card">
+        <h3>Eco-Zelte</h3>
+        <p>Nachhaltige Zeltlösungen aus recycelten Materialien für umweltbewusstes Campen.</p>
+      </article>
+    </section>
+
+    <section id="eco" class="feature-eco animate-on-scroll">
+      <div class="trash-island-hero">
+        <div class="trash-island-content">
+          <h2 class="trash-island-title">Trash Island</h2>
+          <p class="trash-island-subtitle">Beim Electrisize steht Nachhaltigkeit im Mittelpunkt: lokale Materialien, Kompoststationen, und Zero-Waste-Zonen reduzieren den ökologischen Fußabdruck des Camps.</p>
+        </div>
+        <div class="trash-island-popup">
+          <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=500&h=500&fit=crop" alt="Trash Island Visualization" />
+        </div>
+      </div>
+      <ul>
+        <li>Kompostierbare Einwegartikel</li>
+        <li>Lokale, vegetarische Verpflegung</li>
+        <li>Energieeffiziente Beleuchtung</li>
+      </ul>
+    </section>
+
+    <section id="site-map" class="site-map animate-on-scroll">
+      <div class="map-header">
+        <h2>Lageplan</h2>
+        <p class="map-subtitle">Dein Guide für das Festivalgelände — finde alle wichtigen Bereiche auf einen Blick</p>
+      </div>
+      
+      <div class="map-container">
+        <div class="map-placeholder">
+          <svg viewBox="0 0 460 660" xmlns="http://www.w3.org/2000/svg" style="transform: scale(1.35);">
+            <!-- Camp - Oben links (merged: vorher zwei separate Camps) -->
+            <rect x="5" y="5" width="195" height="285" rx="6" class="map-camping" data-type="camping" stroke-width="2" />
+            <text x="102" y="150" class="map-label">Camp</text>
+            
+            <!-- REWE - Links unten overlay -->
+            <rect x="5" y="160" width="85" height="130" rx="6" class="map-rcwc" data-type="rcwc" stroke-width="2" />  
+            <text x="47" y="195" class="map-label-small">R</text>
+            <text x="47" y="220" class="map-label-small">E</text>
+            <text x="47" y="245" class="map-label-small">W</text>
+            <text x="47" y="270" class="map-label-small">E</text>
+            
+            <!-- Camp - Oben rechts groß -->
+            <rect x="210" y="5" width="245" height="285" rx="6" class="map-camping" data-type="camping" stroke-width="2" />
+            <text x="332" y="150" class="map-label">Camp</text>
+            
+            <!-- Parkplatz - Links unten groß -->
+            <rect x="5" y="300" width="195" height="350" rx="6" class="map-parking" data-type="parking" stroke-width="2" />
+            <text x="102" y="475" class="map-label">Parkplatz</text>
+            
+            <!-- Toiletten - Mitte vertikal schmal -->
+            <rect x="210" y="300" width="50" height="145" rx="6" class="map-toilet" data-type="toilet" stroke-width="2" />
+            <text x="260" y="345 " class="map-label-vertical" transform="rotate(90 235 340)">Toiletten</text>
+            
+            <!-- Trash Island - Rechts Mitte -->
+            <rect x="270" y="300" width="185" height="145" rx="6" class="map-eco" data-type="eco" stroke-width="2" />
+            <text x="362" y="377" class="map-label">Trash Island</text>
+            
+            <!-- Camp - Unten Mitte -->
+            <rect x="210" y="455" width="135" height="195" rx="6" class="map-camping" data-type="camping" stroke-width="2" />
+            <text x="277" y="552" class="map-label-small">Camp</text>
+            
+            <!-- Creator - Rechts unten vertikal (rot umrandet) -->
+            <rect x="355" y="455" width="100" height="195" rx="6" class="map-creator" data-type="creator" stroke-width="2" />
+            <text x="445" y="510" class="map-label-vertical" transform="rotate(90 405 510)">Creator Zone</text>
+            
+          </svg>
+        </div>
+        
+        <div class="map-legend">
+          <h3>Legende</h3>
+          <div class="legend-item" data-type="camping">
+            <span class="legend-color legend-camping"></span>
+            <span>Camping</span>
+          </div>
+          <div class="legend-item" data-type="eco">
+            <span class="legend-color legend-eco"></span>
+            <span>Trash Island</span>
+          </div>
+          <div class="legend-item" data-type="parking">
+            <span class="legend-color legend-parking"></span>
+            <span>Parkplatz</span>
+          </div>
+          <div class="legend-item" data-type="toilet">
+            <span class="legend-color legend-toilet"></span>
+            <span>Toiletten</span>
+          </div>
+          <div class="legend-item" data-type="rcwc">
+            <span class="legend-color legend-rcwc"></span>
+            <span>REWE</span>
+          </div>
+          <div class="legend-item" data-type="creator">
+            <span class="legend-color legend-creator"></span>
+            <span>Creator Zone</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact animate-on-scroll">
+      <h2>Mitmachen</h2>
+      <p>Habt ihr Ideen oder möchtet Kooperationen anbieten? Schreibt uns: hello@electrisize.example</p>
+    </section>
+  </main>
+
+  <!-- Easter Egg: FoC Logo -->
+  <div class="easter-egg-logo" title="Future of Campside 🌱">
+    <img src="../Logo_Trash Island_Electrisize_weiss.png" alt="FoC" />
+  </div>
+
+  <!-- Easter Egg 2: Hidden FoC Logo -->
+  <div class="easter-egg-logo-2" title="Du hast mich gefunden! 🎉">
+    <img src="../Logo_Trash Island_Electrisize_weiss.png" alt="FoC Secret" />
+  </div>
+
+  <!-- Logo Modal -->
+  <div class="logo-modal" id="logoModal">
+    <div class="logo-modal-content">
+      <span class="logo-modal-close" id="closeLogoModal">×</span>
+      <img src="../Logo_Trash Island_Electrisize_weiss.png" alt="Future of Campside Logo" />
+      <p class="logo-modal-text">Future of Campside</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-brand">Teil des <a href="https://electrisize.de" target="_blank" class="footer-link">Electrisize Festivals</a> seit 2026</p>
+    <p class="footer-copy">© 2026 Future of Campside — Electrisize Eco Initiative</p>
+  </footer>
+
+  <script>
+  // Smooth Scroll mit anpassbarer Geschwindigkeit
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || !targetId) return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (!targetElement) return;
+      
+      e.preventDefault();
+      
+      const startPosition = window.pageYOffset;
+      const targetPosition = targetElement.offsetTop - 80; // 80px Offset für Nav
+      const distance = targetPosition - startPosition;
+      const duration = 800; // Hier die Geschwindigkeit in Millisekunden anpassen (800 = mittel)
+      let startTime = null;
+      
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        // Easing function (ease-in-out)
+        const ease = progress < 0.5 
+          ? 4 * progress * progress * progress 
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        window.scrollTo(0, startPosition + (distance * ease));
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+      
+      requestAnimationFrame(animation);
+    });
+  });
+  
+  // Chat Modal Funktionalität
+  document.addEventListener('DOMContentLoaded', () => {
+    const badge = document.getElementById('festivalBadge');
+    const modal = document.getElementById('chatModal');
+    const closeBtn = document.getElementById('closeChat');
+    const sendBtn = document.getElementById('sendBtn');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    
+    // Toggle Modal
+    badge.addEventListener('click', () => {
+      modal.classList.toggle('active');
+      if (modal.classList.contains('active')) {
+        chatInput.focus();
+      }
+    });
+    
+    // Close Modal
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modal.classList.remove('active');
+    });
+    
+    // Send Message
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (!message) return;
+      
+      // User Message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'chat-message user';
+      userMsg.innerHTML = `<p>${message}</p>`;
+      chatMessages.appendChild(userMsg);
+      
+      chatInput.value = '';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      
+      // Simulate Response (hier könnte ChatGPT API integriert werden)
+      setTimeout(() => {
+        const assistantMsg = document.createElement('div');
+        assistantMsg.className = 'chat-message assistant';
+        assistantMsg.innerHTML = `<p>Danke für deine Frage! Hier wäre die ChatGPT Integration für: "${message}"</p>`;
+        chatMessages.appendChild(assistantMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 800);
+    }
+    
+    sendBtn.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  });
+  
+  // Apple-Style Scroll-Effekt für Titel-Transition
+  window.addEventListener('scroll', () => {
+    const navTitle = document.querySelector('.nav-title');
+    const heroSection = document.querySelector('.hero');
+    const heroTitle = document.querySelector('.fisheye-title');
+    const nav = document.querySelector('.nav');
+    
+    if (heroSection && navTitle && heroTitle && nav) {
+      const scrollY = window.scrollY;
+      const heroRect = heroSection.getBoundingClientRect();
+      const heroHeight = heroSection.offsetHeight;
+      
+      // Berechne Scroll-Progress (0 bis 1)
+      const scrollProgress = Math.min(Math.max(scrollY / (heroHeight * 0.6), 0), 1);
+      
+      // Hero-Titel Animation
+      const scale = 1.15 - (scrollProgress * 0.3); // Skaliert von 1.15 auf 0.85
+      const opacity = 1 - (scrollProgress * 1.2); // Faded schneller aus
+      const translateY = scrollProgress * -30; // Bewegt sich nach oben
+      
+      heroTitle.style.transform = `scaleX(${scale}) translateX(30px) translateY(${translateY}px)`;
+      heroTitle.style.opacity = opacity;
+      
+      // Nav Backdrop-Transparenz beim Scrollen
+      const bgOpacity = scrollProgress > 0 ? 0.65 : 0.5;
+      nav.style.setProperty('--nav-bg-opacity', bgOpacity);
+      
+      // Nav-Titel erscheint synchron (früher bei 400px statt 200px)
+      if (heroRect.bottom < 500) {
+        navTitle.classList.add('visible');
+      } else {
+        navTitle.classList.remove('visible');
+      }
+    }
+    
+    // Trash Island Scroll-Animation
+    const trashIslandSection = document.querySelector('#eco');
+    const trashIslandTitle = document.querySelector('.trash-island-title');
+    const trashIslandPopup = document.querySelector('.trash-island-popup');
+    const trashIslandContent = document.querySelector('.trash-island-content');
+    
+    if (trashIslandSection && trashIslandTitle && trashIslandPopup && trashIslandContent) {
+      const rect = trashIslandSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionHeight = trashIslandSection.offsetHeight;
+      
+      // Berechne, ob die Section im Viewport ist
+      const isInView = rect.top < windowHeight && rect.bottom > 0;
+      
+      if (isInView) {
+        // Scroll-Progress innerhalb der Section (0 bis 1)
+        const sectionProgress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + sectionHeight)));
+        
+        // Bild erscheint wenn Section in View kommt (0-0.4 des Scroll-Progress)
+        const imageProgress = Math.min(1, sectionProgress / 0.4);
+        
+        // Bild und Text bewegen sich beim Scrollen (0.4-1 des Scroll-Progress)
+        const moveProgress = Math.max(0, (sectionProgress - 0.4) / 0.6);
+        
+        // Bild fade-in und slide-in
+        const imageOpacity = imageProgress;
+        const imageTranslateX = 40 - (imageProgress * 40); // von 40px auf 0
+        const imageScale = 0.95 + (imageProgress * 0.05); // von 0.95 auf 1
+        
+        // Text und Bild bewegen sich nach oben beim weiteren Scrollen
+        const contentTranslateY = -(moveProgress * 50);
+        const contentOpacity = 1 - (moveProgress * 0.7);
+        
+        // Anwenden
+        trashIslandPopup.style.opacity = imageOpacity * contentOpacity;
+        trashIslandPopup.style.transform = `translateX(${imageTranslateX}px) translateY(${contentTranslateY}px) scale(${imageScale})`;
+        
+        trashIslandContent.style.opacity = contentOpacity;
+        trashIslandContent.style.transform = `translateY(${contentTranslateY}px)`;
+      } else {
+        // Reset wenn außerhalb des Viewports
+        trashIslandPopup.style.opacity = '0';
+        trashIslandPopup.style.transform = 'translateX(40px) scale(0.95)';
+        trashIslandContent.style.opacity = '1';
+        trashIslandContent.style.transform = 'translateY(0)';
+      }
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const maxRadius = 120;
+    const fisheyeTargets = document.querySelectorAll('.fisheye-title, .fisheye-word');
+    if (!fisheyeTargets.length) return;
+    
+    const forbidden = ['SCRIPT','STYLE','CODE','PRE','TEXTAREA','INPUT','AUDIO','VIDEO'];
+
+    const textNodes = [];
+    
+    // Collect text nodes aus allen Targets
+    fisheyeTargets.forEach(fisheyeTarget => {
+      const walker = document.createTreeWalker(fisheyeTarget, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const p = node.parentNode && node.parentNode.tagName;
+          if (forbidden.includes(p)) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+    });
+
+    function wrapTextNode(node){
+      // Wrap each character individually
+      const text = node.nodeValue;
+      const frag = document.createDocumentFragment();
+      for (const ch of text){
+        const span = document.createElement('span');
+        span.className = 'fx';
+        // Extra spacing für Leerzeichen
+        if (ch === ' ') span.classList.add('fx-space');
+        span.textContent = ch;
+        frag.appendChild(span);
+      }
+      node.parentNode.replaceChild(frag, node);
+    }
+
+    for (const tn of textNodes) wrapTextNode(tn);
+
+    const spans = Array.from(document.querySelectorAll('.fx'));
+    if (!spans.length) return;
+
+    let mouseX = -9999, mouseY = -9999;
+    let raf = null;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; schedule(); });
+
+    function schedule(){ if (raf) return; raf = requestAnimationFrame(update); }
+    function update(){
+      raf = null;
+      for (const s of spans){
+        const rect = s.getBoundingClientRect();
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+        const dx = cx - mouseX; const dy = cy - mouseY;
+        const d = Math.hypot(dx,dy);
+        const influence = Math.max(0, 1 - d / maxRadius);
+        
+        // Sanfte Skalierung: Apple-Style mit vertikaler Stauchung
+        const scaleX = 1 + influence * 0.5; // Subtilere horizontale Skalierung
+        const scaleY = 1 - influence * 0.5; // Stärkere vertikale Stauchung
+        
+        // Subtiler Spread für visuelle Lockerheit, ohne Lesbarkeit zu beeinträchtigen
+        const spreadDist = 2 * influence; // Weniger Spread
+        const angle = Math.atan2(dy, dx);
+        const spreadX = Math.cos(angle) * spreadDist;
+        const spreadY = Math.sin(angle) * spreadDist;
+        
+        // Farbwechsel mit individuellen Hex-Codes pro Element
+        // Hole Farben aus data-Attributen oder nutze Standard-Farben
+        const parentElement = s.parentElement;
+        const colorFar = parentElement?.dataset?.colorFar || '#ff6600';
+        const colorNear = parentElement?.dataset?.colorNear || '#30fd47';
+        
+        // Hex zu RGB konvertieren
+        const hexToRgb = (hex) => {
+          const red = parseInt(hex.slice(1, 3), 16);
+          const green = parseInt(hex.slice(3, 5), 16);
+          const blue = parseInt(hex.slice(5, 7), 16);
+          return [red, green, blue];
+        };
+        
+        const [r1, g1, b1] = hexToRgb(colorFar);
+        const [r2, g2, b2] = hexToRgb(colorNear);
+        
+        // Interpolation zwischen den beiden Farben
+        const red = Math.round(r1 + (r2 - r1) * influence);
+        const green = Math.round(g1 + (g2 - g1) * influence);
+        const blue = Math.round(b1 + (b2 - b1) * influence);
+        
+        // Subtiler Blur-Effekt für Eleganz
+        const blurAmount = influence * 0.3;
+        
+        s.style.transform = `scale(${scaleX}, ${scaleY}) translate(${spreadX}px, ${spreadY}px)`;
+        s.style.color = `rgb(${red}, ${green}, ${blue})`;
+        s.style.filter = `blur(${blurAmount}px)`;
+      }
+    }
+  });
+
+  // Scroll-Animationen mit Intersection Observer
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Map Legend Interactivity - Highlight map areas on legend click
+  document.addEventListener('DOMContentLoaded', () => {
+    const legendItems = document.querySelectorAll('.legend-item[data-type]');
+    const mapAreas = document.querySelectorAll('rect[data-type]');
+    const svg = document.querySelector('.map-placeholder svg');
+    const textElements = svg.querySelectorAll('text');
+    let activeType = null;
+
+    legendItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const type = item.dataset.type;
+        
+        // Toggle: wenn bereits aktiv, deaktivieren
+        if (activeType === type) {
+          activeType = null;
+          legendItems.forEach(li => li.classList.remove('active'));
+          mapAreas.forEach(area => area.classList.remove('highlighted', 'dimmed'));
+        } else {
+          // Neue Auswahl
+          activeType = type;
+          
+          // Legende aktualisieren
+          legendItems.forEach(li => {
+            if (li.dataset.type === type) {
+              li.classList.add('active');
+            } else {
+              li.classList.remove('active');
+            }
+          });
+          
+          // Karte aktualisieren
+          mapAreas.forEach(area => {
+            if (area.dataset.type === type) {
+              area.classList.add('highlighted');
+              area.classList.remove('dimmed');
+              // Bringe hervorgehobene Elemente nach vorne
+              svg.appendChild(area);
+            } else {
+              area.classList.remove('highlighted');
+              area.classList.add('dimmed');
+            }
+          });
+          
+          // Stelle sicher, dass alle Text-Elemente ganz oben sind
+          textElements.forEach(text => svg.appendChild(text));
+        }
+      });
+    });
+  });
+
+  // Logo Modal Funktionalität
+  document.addEventListener('DOMContentLoaded', () => {
+    const easterEgg = document.querySelector('.easter-egg-logo');
+    const modal = document.getElementById('logoModal');
+    const closeBtn = document.getElementById('closeLogoModal');
+    
+    easterEgg.addEventListener('click', () => {
+      modal.classList.add('active');
+    });
+    
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+    
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  });
+  </script>
+</body>
+</html>
