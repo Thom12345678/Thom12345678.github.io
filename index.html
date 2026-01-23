@@ -46,6 +46,7 @@
       <a href="#hero">Innovationen</a>
       <a href="#eco">Trash Island</a>
       <a href="#site-map">Lageplan</a>
+      <a href="#agb">R.H</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header>
@@ -57,7 +58,7 @@
         <h2>Campside </h2>
       </div>
       <p class="hero-badge">Ein Projekt des Electrisize Festivals</p>
-      <p class="lead">Innovationen, die Campen auf dem Electrisize Festival smarter & <span class="fisheye-word" data-color-far="#fffffff" data-color-near="#30fd47">grüner</span> machen.</p>
+      <p class="lead">Innovationen, die Campen auf dem Electrisize Festival smarter & <span class="fisheye-word" data-color-far="#30fd47" data-color-near="#ff7a00">grüner</span> machen.</p>
       <p><a class="btn" href="#features">Mehr erfahren </a></p>
     </section>
 
@@ -178,6 +179,41 @@
       <h2>Mitmachen</h2>
       <p>Habt ihr Ideen oder möchtet Kooperationen anbieten? Schreibt uns: hello@electrisize.example</p>
     </section>
+
+    <section id="agb" class="agb-section animate-on-scroll">
+      <div class="agb-header">
+        <p class="agb-eyebrow">Rechtliches</p>
+        <h2>Rechtliche Hinweise</h2>
+        <p class="agb-subtitle"></p>
+      </div>
+      <div class="agb-card minimized" id="agbCard" data-state="minimized">
+        <button class="agb-toolbar" id="agbToolbar" type="button" aria-label="AGB-Fenster minimieren oder öffnen">
+          <span class="agb-dot dot-red"></span>
+          <span class="agb-dot dot-yellow"></span>
+          <span class="agb-dot dot-green"></span>
+          <span class="agb-status">Version 1.1.2 · Stand: 21. Januar 2026</span>
+        </button>
+        <div class="agb-content">
+          <h3>§1 Geltungsbereich</h3>
+          <p>Hier kannst du den Anwendungsbereich deiner AGB beschreiben. Ersetze diesen Platzhalter mit deinem finalen Text.</p>
+
+          <h3>§2 Leistungen</h3>
+          <p>Beschreibe die angebotenen Leistungen, Produkte oder Services. Ergänze alle relevanten Details.</p>
+
+          <h3>§3 Vertragsabschluss</h3>
+          <p>Füge hier die Informationen ein, wie ein Vertrag zustande kommt, inklusive Annahmeprozesse.</p>
+
+          <h3>§4 Preise & Zahlung</h3>
+          <p>Ergänze Regelungen zu Preisen, Zahlungsarten, Fälligkeit und Verzug.</p>
+
+          <h3>§5 Widerruf</h3>
+          <p>Füge hier die Widerrufsbelehrung oder Hinweise zu Ausschlüssen ein.</p>
+
+          <h3>§6 Schlussbestimmungen</h3>
+          <p>Platz für Gerichtsstand, Salvatorische Klausel und weitere rechtliche Hinweise.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Easter Egg: FoC Logo -->
@@ -251,6 +287,8 @@
     const sendBtn = document.getElementById('sendBtn');
     const chatInput = document.getElementById('chatInput');
     const chatMessages = document.getElementById('chatMessages');
+    const agbCard = document.getElementById('agbCard');
+    const agbToolbar = document.getElementById('agbToolbar');
     
     // Toggle Modal
     badge.addEventListener('click', () => {
@@ -294,35 +332,52 @@
     chatInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') sendMessage();
     });
+
+    if (agbCard && agbToolbar) {
+      agbToolbar.addEventListener('click', () => {
+        const isMinimized = agbCard.classList.toggle('minimized');
+        agbCard.dataset.state = isMinimized ? 'minimized' : 'open';
+        if (!isMinimized) {
+          agbCard.classList.add('opening');
+          window.setTimeout(() => agbCard.classList.remove('opening'), 450);
+        }
+      });
+    }
   });
   
-  // Apple-Style Scroll-Effekt für Titel-Transition
-  window.addEventListener('scroll', () => {
-    const navTitle = document.querySelector('.nav-title');
-    const heroSection = document.querySelector('.hero');
-    const heroTitle = document.querySelector('.fisheye-title');
-    const nav = document.querySelector('.nav');
-    
+  // Apple-Style Scroll-Effekt für Titel-Transition (optimiert mit rAF + DOM-Cache)
+  const navTitle = document.querySelector('.nav-title');
+  const heroSection = document.querySelector('.hero');
+  const heroTitle = document.querySelector('.fisheye-title');
+  const nav = document.querySelector('.nav');
+  const trashIslandSection = document.querySelector('#eco');
+  const trashIslandTitle = document.querySelector('.trash-island-title');
+  const trashIslandPopup = document.querySelector('.trash-island-popup');
+  const trashIslandContent = document.querySelector('.trash-island-content');
+
+  let scrollTicking = false;
+  function onScrollUpdate() {
+    scrollTicking = false;
     if (heroSection && navTitle && heroTitle && nav) {
       const scrollY = window.scrollY;
       const heroRect = heroSection.getBoundingClientRect();
       const heroHeight = heroSection.offsetHeight;
-      
+
       // Berechne Scroll-Progress (0 bis 1)
       const scrollProgress = Math.min(Math.max(scrollY / (heroHeight * 0.6), 0), 1);
-      
+
       // Hero-Titel Animation
       const scale = 1.15 - (scrollProgress * 0.3); // Skaliert von 1.15 auf 0.85
       const opacity = 1 - (scrollProgress * 1.2); // Faded schneller aus
       const translateY = scrollProgress * -30; // Bewegt sich nach oben
-      
+
       heroTitle.style.transform = `scaleX(${scale}) translateX(30px) translateY(${translateY}px)`;
       heroTitle.style.opacity = opacity;
-      
+
       // Nav Backdrop-Transparenz beim Scrollen
       const bgOpacity = scrollProgress > 0 ? 0.65 : 0.5;
       nav.style.setProperty('--nav-bg-opacity', bgOpacity);
-      
+
       // Nav-Titel erscheint synchron (früher bei 400px statt 200px)
       if (heroRect.bottom < 500) {
         navTitle.classList.add('visible');
@@ -330,44 +385,39 @@
         navTitle.classList.remove('visible');
       }
     }
-    
+
     // Trash Island Scroll-Animation
-    const trashIslandSection = document.querySelector('#eco');
-    const trashIslandTitle = document.querySelector('.trash-island-title');
-    const trashIslandPopup = document.querySelector('.trash-island-popup');
-    const trashIslandContent = document.querySelector('.trash-island-content');
-    
     if (trashIslandSection && trashIslandTitle && trashIslandPopup && trashIslandContent) {
       const rect = trashIslandSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const sectionHeight = trashIslandSection.offsetHeight;
-      
+
       // Berechne, ob die Section im Viewport ist
       const isInView = rect.top < windowHeight && rect.bottom > 0;
-      
+
       if (isInView) {
         // Scroll-Progress innerhalb der Section (0 bis 1)
         const sectionProgress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + sectionHeight)));
-        
+
         // Bild erscheint wenn Section in View kommt (0-0.4 des Scroll-Progress)
         const imageProgress = Math.min(1, sectionProgress / 0.4);
-        
+
         // Bild und Text bewegen sich beim Scrollen (0.4-1 des Scroll-Progress)
         const moveProgress = Math.max(0, (sectionProgress - 0.4) / 0.6);
-        
+
         // Bild fade-in und slide-in
         const imageOpacity = imageProgress;
         const imageTranslateX = 40 - (imageProgress * 40); // von 40px auf 0
         const imageScale = 0.95 + (imageProgress * 0.05); // von 0.95 auf 1
-        
+
         // Text und Bild bewegen sich nach oben beim weiteren Scrollen
         const contentTranslateY = -(moveProgress * 50);
         const contentOpacity = 1 - (moveProgress * 0.7);
-        
+
         // Anwenden
         trashIslandPopup.style.opacity = imageOpacity * contentOpacity;
         trashIslandPopup.style.transform = `translateX(${imageTranslateX}px) translateY(${contentTranslateY}px) scale(${imageScale})`;
-        
+
         trashIslandContent.style.opacity = contentOpacity;
         trashIslandContent.style.transform = `translateY(${contentTranslateY}px)`;
       } else {
@@ -378,7 +428,13 @@
         trashIslandContent.style.transform = 'translateY(0)';
       }
     }
-  });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(onScrollUpdate);
+  }, { passive: true });
 
   document.addEventListener('DOMContentLoaded', () => {
     const maxRadius = 120;
@@ -450,8 +506,8 @@
         // Farbwechsel mit individuellen Hex-Codes pro Element
         // Hole Farben aus data-Attributen oder nutze Standard-Farben
         const parentElement = s.parentElement;
-        const colorFar = parentElement?.dataset?.colorFar || '#ff6600';
-        const colorNear = parentElement?.dataset?.colorNear || '#30fd47';
+        const colorFar = parentElement?.dataset?.colorFar || '#30fd47';
+        const colorNear = parentElement?.dataset?.colorNear || '#ff7a00';
         
         // Hex zu RGB konvertieren
         const hexToRgb = (hex) => {
@@ -502,6 +558,7 @@
     const legendItems = document.querySelectorAll('.legend-item[data-type]');
     const mapAreas = document.querySelectorAll('rect[data-type]');
     const svg = document.querySelector('.map-placeholder svg');
+    if (!svg) return;
     const textElements = svg.querySelectorAll('text');
     let activeType = null;
 
