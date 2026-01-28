@@ -65,37 +65,46 @@
 
     <section id="features" class="cards">
       <article class="card">
-        <h3>Solare Ladehubs</h3>
+        <h3>Was ist das Problem?</h3>
         <p>Kostengünstige, gemeinschaftliche Ladestationen betrieben mit modularen Solarpanelen.</p>
       </article>
       <article class="card">
-        <h3>Wasserrecycling</h3>
+        <h3>Warum Elecrisize?</h3>
         <p>Mobile Systeme zur Aufbereitung von Dusch- und Spülwasser für wiederverwendbaren Gebrauch.</p>
       </article>
       <article class="card">
-        <h3>Smart-Sharing</h3>
+        <h3>SMARTE Ziele</h3>
         <p>App-basierte Plattform zum Teilen von Zeltequipment, Werkzeugen und Lichtquellen.</p>
       </article>
       <article class="card">
-        <h3>Eco-Zelte</h3>
+        <h3>Wir kriegen das hin!</h3>
         <p>Nachhaltige Zeltlösungen aus recycelten Materialien für umweltbewusstes Campen.</p>
       </article>
     </section>
 
     <section id="eco" class="feature-eco animate-on-scroll">
       <div class="trash-island-hero">
-        <div class="trash-island-content">
-          <h2 class="trash-island-title">Trash Island</h2>
-          <p class="trash-island-subtitle">Beim Electrisize steht Nachhaltigkeit im Mittelpunkt: lokale Materialien, Kompoststationen, und Zero-Waste-Zonen reduzieren den ökologischen Fußabdruck des Camps.</p>
+        <div class="trash-island-heading">
+          <h2 class="trash-island-title">Was ist Trash Island?</h2>
         </div>
-        <div class="trash-island-popup">
-          <img src="Festival.png" alt="Trash Island Visualization" />
+        <div class="trash-island-body">
+          <div class="trash-island-content">
+            <ul class="trash-island-subtitle">
+              <li>Trash Island ist eine spannende neue Area auf dem Campingplatz des Electrisize, die Nachhaltigkeit feiert. Der Titel soll provozieren und neugierig machen.</li>
+              <li>Es gibt eine Stage aus Containern mit täglich wechselnden Acts / DJs.</li>
+              <li>Zugang nur möglich durch Abgabe eines vollen Müllsacks.</li>
+              <li>Zusätzliche Seecontainer als industrieller Dekolook / Abgrenzung der Insel zum Campingplatz.</li>
+            </ul>
+          </div>
+          <div class="trash-island-popup">
+            <img src="Festival.png" alt="Trash Island Visualization" />
+          </div>
         </div>
       </div>
       <ul>
-        <li>Kompostierbare Einwegartikel</li>
-        <li>Lokale, vegetarische Verpflegung</li>
-        <li>Energieeffiziente Beleuchtung</li>
+        <li>Vermietung von Zelten mit Pfandsystem</li>
+        <li>Mini-Rewe mit ausgewählten Produkten & fairen Preisen (durch Rewe-Kooperation)​</li>
+        <li>Pfandautomaten auf dem Gelände​</li>
       </ul>
     </section>
 
@@ -400,13 +409,13 @@
 
         // Text und Bild bewegen sich nach oben beim weiteren Scrollen
         const contentTranslateY = -(moveProgress * 50);
-        const contentOpacity = 1 - (moveProgress * 0.7);
+        const contentOpacity = 1;
 
         // Anwenden
         trashIslandPopup.style.opacity = imageOpacity * contentOpacity;
         trashIslandPopup.style.transform = `translateX(${imageTranslateX}px) translateY(${contentTranslateY}px) scale(${imageScale})`;
 
-        trashIslandContent.style.opacity = contentOpacity;
+        trashIslandContent.style.opacity = '1';
         trashIslandContent.style.transform = `translateY(${contentTranslateY}px)`;
       } else {
         // Reset wenn außerhalb des Viewports
