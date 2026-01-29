@@ -59,7 +59,7 @@ body{position:relative;overflow-x:hidden;min-height:100vh}
 /* Header: fixed top with glass-like nav box (iOS-like) */
 .nav{--nav-bg-opacity:1;display:flex;align-items:center;padding:16px 20px;position:fixed;top:18px;left:20px;right:20px;z-index:1000;background:rgba(11,11,13,0.95);border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.5), 0 4px 16px rgba(48,253,71,0.5), 0 0 0 1px rgba(48, 253, 72, 0.5) inset;backdrop-filter:blur(20px) saturate(150%);border:2px solid rgba(48,253,71,0.5);background:linear-gradient(rgba(0,0,0,var(--nav-bg-opacity)), rgba(0,0,0,var(--nav-bg-opacity))) padding-box, linear-gradient(135deg, rgba(48,253,71,0.2), rgba(48,253,71,0.08)) border-box;transition:background 0.4s ease}
 .nav .logo{margin-right:12px}
-.nav-title{position:absolute;left:50%;transform:translateX(-50%) translateY(-10px) scale(0.95);font-size:10px;font-weight:600;color:#fff;opacity:0;pointer-events:none;transition:opacity .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), letter-spacing .6s cubic-bezier(0.25, 0.46, 0.45, 0.94);white-space:nowrap;padding:6px 14px;border-radius:16px;backdrop-filter:blur(20px) saturate(150%);border:2px solid transparent;background:linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(135deg, #ffffff, #30fd47) border-box;box-shadow:0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.05) inset;filter:blur(8px);letter-spacing:0.05em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:10px}
+.nav-title{position:absolute;left:50%;transform:translateX(-50%) translateY(-10px) scale(0.95);font-size:10px;font-weight:600;color:#fff;opacity:0;pointer-events:none;transition:opacity .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter .6s cubic-bezier(0.25, 0.46, 0.45, 0.94), letter-spacing .6s cubic-bezier(0.25, 0.46, 0.45, 0.94);white-space:nowrap;padding:8px 14px;border-radius:16px;backdrop-filter:blur(20px) saturate(150%);border:2px solid transparent;background:linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(135deg, #ffffff, #30fd47) border-box;box-shadow:0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.05) inset;filter:blur(8px);letter-spacing:0.05em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px}
 .nav-title-logo{width:32px;height:32px;object-fit:contain;border-radius:8px;border:2px solid rgba(48,253,71,0.6);transition:all 0.4s ease;background:rgba(0,0,0,0.3);padding:4px}
 .nav-title:hover .nav-title-logo{border-color:rgba(48,253,71,1);transform:rotate(360deg) scale(1.15);box-shadow:0 0 15px rgba(48,253,71,0.7)}
 .nav-title.visible{opacity:1;transform:translateX(-50%) translateY(0) scale(1);filter:blur(0px);letter-spacing:0.1em;pointer-events:auto}
@@ -89,6 +89,11 @@ main{margin-top:110px}
 .card ul{margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.6;color:#1a1200;word-spacing:2px}
 .card li{margin:0}
 .stat-highlight{display:inline-block;min-width:3ch;font-weight:800;letter-spacing:0.02em;color:#fff;background:rgba(0,0,0,0.55);padding:2px 8px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.12) inset}
+.card-cta{position:relative}
+.card-cta h3{display:flex;align-items:center;gap:10px}
+.card-cta h3::after{content:"OK";font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,0.55);padding:4px 8px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,0.2)}
+.card-cta ul{margin-top:10px}
+.card-cta-note{margin-top:16px;padding:0;color:#1a1200;font-weight:600;letter-spacing:0.01em;box-shadow:none;background:none;border-radius:0}
 .feature-eco{padding:90px 28px;color:var(--muted);max-width:900px;margin:0 auto}
 .feature-eco h2{color:#fff;font-size:clamp(32px,5vw,48px);margin-bottom:24px}
 .feature-eco ul{margin-top:20px;line-height:1.8}
